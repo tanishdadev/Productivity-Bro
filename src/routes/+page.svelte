@@ -1,2 +1,46 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script>
+    import { goto } from "$app/navigation";
+
+    function goToFeatures() {
+        goto("/feature");
+    }
+
+    function goToApp() {
+        goto("/main");
+    }
+</script>
+
+<div class="bg-blue-200 rounded-lg drop-shadow-lg p-1 m-4 pt-6 pb-4">
+  <div class="flex flex-col items-center text-center space-y-4">
+    <div class="font-bold text-5xl text-blue-900 relative inline-block headhover-underline">Productivity Bro</div>
+    <div class="font-bold text-2xl text-slate-700 pb-4 pt-4 inline-block hover-underline">Built to keep you moving, one goal at a time!</div>
+  </div>
+</div>
+
+<div>Next Steps</div>
+<div>
+    <div>
+        <button onclick="{goToApp}"></button>
+    </div>
+    <div>
+        <button onclick="{goToFeatures}"></button>
+    </div>
+</div>
+
+
+<style>
+    .headhover-underline:hover {
+        text-decoration: underline;
+        text-decoration-color: #2563eb;
+        text-decoration-thickness: 2px;
+    }
+    .headhover-underline:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #2563eb;
+    }
+    .hover-underline:hover {
+        text-decoration: underline;
+        text-decoration-color: #2563eb;
+        text-decoration-thickness: 2px;
+    }
+</style>
