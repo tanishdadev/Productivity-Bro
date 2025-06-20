@@ -4,15 +4,24 @@
     let isRunning = false;
     let timer;
     let isDropDownOpen = $state(false);
-    let name = "Tanish";
+    let name = "User";
     let showList = $state(false);
-    let quotes = [
-        "The only way to do great work is to love what you do. - Steve Jobs",
-        "Life is what happens when you're busy making other plans. - John Lennon",
-        "Get busy living or get busy dying. - Stephen King",
-        "You have within you right now, everything you need to deal with whatever the world can throw at you. - Brian Tracy",
-        "Believe you can and you're halfway there. - Theodore Roosevelt"
-    ];
+    let quote = $state('');
+    let author = $state('');
+
+    async function fetchQuote() {
+        try{
+            const response = await fetch('https://proxymad.vercel.app/api/proxy?url=https://zenquotes.io/api/random');
+            const data = await response.json();
+            quote = data[0].q;
+            author = data[0].a;
+        } catch (error) {
+            console.error('Error fetching quote:', error);
+            quote = 'This is the quote of the day btw!';
+            author = 'Tanish';
+        }
+    }
+    fetchQuote();
 
     function startTimer() {
         if (isRunning) return;
@@ -75,13 +84,14 @@
     <ToDo/>
 </div>
 
-<div class="relative">
-    <div>
-        <div class="text-3xl text-center absolute w-full">Good Day, {name}</div>
+<div>
+    <div class="absolute top-2 left-1/2 transform -translate-x-1/2 text-center space-y-2">
+        <div class="">{quote}</div>
+        <div class="">- {author}</div>
     </div>
 
     <div>
-        <div><!--To be added--></div>
+        <div class="text-3xl text-center absolute w-full top-30">Good Day, {name}</div>
     </div>
 
     <div class="space-y-20 py-60 flex flex-col items-center justify-center">
