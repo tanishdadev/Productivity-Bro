@@ -1,37 +1,38 @@
 <script>
-
+    function goTo(path){
+        path = "/home";
+        window.location.href = path;
+    }
 </script>
 
-<div class="bg-blue-200 rounded-lg drop-shadow-lg p-1 m-4 pt-6 pb-4">
-  <div class="flex flex-col items-center text-center space-y-4">
-    <div class="font-bold text-5xl text-blue-900 relative inline-block headhover-underline">Productivity Bro</div>
-    <div class="font-bold text-3xl text-slate-700 pb-4 pt-4 inline-block hover-underline">Built to keep you moving, one goal at a time!</div>
-  </div>
-</div>
+<div class="flex flex-col items-center justify-center min-h-screen bg-blue-400">
+    <div class="backdrop-blur-xl bg-white/15 rounded-3xl shadow-2xl border border-white/25 p-8 w-96">
+        <form class="space-y-6">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-slate-200 mb-2">Welcome Back</h2>
+                <p class="text-slate-200">Sign in to your account</p>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="relative">
+                    <input type="text" name="email" id="email" placeholder="Email" required class="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border border-white/40 rounded-2xl text-slate-800 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-800 transition-all duration-400">
+                </div>
+                
+                <div class="relative">
+                    <input type="password" name="password" id="password" placeholder="Password" required class="w-full px-4 py-3 bg-white/80 backdrop-blur-sm border border-white/40 rounded-2xl text-slate-800 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-800 transition-all duration-400">
+                </div>
+            </div>
+            
+            <div class="flex items-end justify-end text-sm">
+                <a href="#" class="text-blue-700 hover:text-blue-800 font-medium transition-colors">Forgot password?</a>
+            </div>
 
-<div class="py-12 text-center text-2xl">So you want to do productivity maxxing?</div>
-<div class="flex gap-25 py-10 justify-center">
-    <div>
-        <a href="/main" class="inline-block bg-amber-700 p-4 border-2">BroMaxxing</a>
-    </div>
-    <div>
-        <a href="/features" class="inline-block bg-amber-700 p-4 border-2">Features</a>
-    </div>
-</div>
+            <button type="submit" onclick={goTo} class="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 backdrop-blur-sm border border-blue-500 rounded-2xl text-white font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl">Sign In</button>
 
-<style>
-    .headhover-underline:hover {
-        text-decoration: underline;
-        text-decoration-color: #2563eb;
-        text-decoration-thickness: 2px;
-    }
-    .headhover-underline:focus {
-        outline: none;
-        box-shadow: 0 0 0 2px #2563eb;
-    }
-    .hover-underline:hover {
-        text-decoration: underline;
-        text-decoration-color: #2563eb;
-        text-decoration-thickness: 2px;
-    }
-</style>
+            <div class="text-center">
+                <p class="text-slate-600">Don't have an account? <a href="#" class="text-blue-700 font-semibold hover:text-blue-800 hover:underline transition-colors">Sign up</a></p>
+            </div>
+        </form>
+    </div>
+    <div class="absolute bottom-8">Made with ❤️ by Tanish</div>
+</div>
