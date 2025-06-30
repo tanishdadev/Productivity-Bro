@@ -17,8 +17,8 @@
             author = data[0].a;
         } catch (error) {
             console.error('Error fetching quote:', error);
-            quote = 'This is the quote of the day btw!';
-            author = 'Tanish';
+            quote = 'Don’t let the noise of others’ opinions drown out your own inner voice.';
+            author = 'Steve Jobs';
         }
     }
     fetchQuote();
