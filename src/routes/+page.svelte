@@ -23,7 +23,22 @@
 
 	onMount(async () => {
 		const { initializeApp } = await import("https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js");
-		const { getAuth, signInWithEmailAndPassword } = await import("https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js");
+		const { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail} = await import("https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js");
+
+		const reset = document.getElementById("reset");
+		reset.addEventListener("click", (event) => {
+			event.preventDefault();
+			const email = document.getElementById("email").value;
+			sendPasswordResetEmail(auth, email)
+  				.then(() => {
+					showMessage('Link has been sent! Check your spam folder if email is not there!', 'signInMessage');
+				})
+  				.catch((error) => {
+    				const errorCode = error.code;
+    				const errorMessage = error.message;
+					showMessage('Enter your email in the email section to continue!', 'signInMessage');
+  				});
+		})
 
 		const app = initializeApp(firebaseConfig);
 		const auth = getAuth(app);
@@ -75,10 +90,10 @@
             </div>
             
             <div class="flex items-end justify-end text-sm">
-                <a href="#" class="text-blue-700 hover:text-blue-800 font-medium transition-colors">Forgot password?</a>
+                <a href="#" id="reset" class="text-blue-700 hover:text-blue-800 font-medium transition-colors">Forgot password?</a>
             </div>
 
-            <button type="submit" id="submitsignIn" class="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 hover:cursor-pointer backdrop-blur-sm border border-blue-500 rounded-2xl text-white font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl">Sign In</button>
+            <button type="button" id="submitsignIn" class="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 hover:cursor-pointer backdrop-blur-sm border border-blue-500 rounded-2xl text-white font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl">Sign In</button>
 
             <div class="text-center">
                 <p class="text-slate-600">Don't have an account? <a href="/signup" class="text-blue-700 font-semibold hover:text-blue-800 hover:underline transition-colors">Sign up</a></p>

@@ -80,7 +80,7 @@
 				</div>
 			</div>
 
-			<button type="submit" id="submitsignUp" class="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 hover:cursor-pointer backdrop-blur-sm border border-blue-500 rounded-2xl text-white font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl">Sign Up</button>
+			<button type="button" id="submitsignUp" class="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 hover:cursor-pointer backdrop-blur-sm border border-blue-500 rounded-2xl text-white font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl">Sign Up</button>
 
 			<div class="text-center">
 				<p class="text-slate-600">Already have an account? <a href="/." class="text-blue-700 font-semibold hover:text-blue-800 hover:underline transition-colors">Sign in</a></p>
