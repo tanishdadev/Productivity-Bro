@@ -12,7 +12,7 @@
 <div class="py-12 text-center text-2xl">So you want to do productivity maxxing?</div>
 <div class="flex gap-25 py-10 justify-center">
     <div>
-        <a href="/main" class="inline-block bg-amber-700 p-4 border-2">BroMaxxing</a>
+        <a href="/main" class="inline-block bg-amber-700 p-4 border-2" onclick={() => sessionStorage.setItem("startMusic", "true")}>BroMaxxing</a>
     </div>
     <div>
         <a href="/features" class="inline-block bg-amber-700 p-4 border-2">Features</a>
