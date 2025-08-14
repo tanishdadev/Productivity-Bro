@@ -1,30 +1,29 @@
 <script>
     const features = [
         {
-            title: "Feature One",
-            description: "Description of feature one.",
-            icon: "📝"
+            title: "Pomodoro Timer",
+            description: "Offers a minimalistic pomodoro timer",
+            icon: "⏰"
         },
         {
-            title: "Feature Two",
-            description: "Description of feature two.",
+            title: "Leaderboard",
+            description: "Coming soon....",
             icon: "🎯"
         },
         {
-            title: "Feature Three",
-            description: "Description of feature three.",
-            icon: "⏰"
+            title: "Soothing music",
+            description: "Featuring multiple soothing background musics to choose from!",
+            icon: "📝"
         }
     ];
 </script>
 
 <section class="py-10 px-10 bg-blue-300">
     <div class="max-w-6xl mx-auto isolate">
-        <div class="flex flex-col items-center text-center mb-15">FeatureMaxxing</div>
-
+    <h2 class="text-4xl font-semibold text-gray-800 tracking-wide border-b-2 border-gray-500 pb-2 my-6">What We Provide</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             {#each features as feature}
-                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 card">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 card my-4">
                     <div class="text-4xl mb-4">{feature.icon}</div>
                     <h3 class="text-xl font-semibold mb-2">{feature.title}</h3>
                     <p class="text-gray-600">{feature.description}</p>

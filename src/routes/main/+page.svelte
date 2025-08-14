@@ -116,10 +116,10 @@
 <div class={isSettingsOpen ? 'blur-sm pointer-events-none select-none' : ''}>
     <div class="flex justify-end px-5 gap-x-5">
         <div class="relative">
-        <button onclick={toggleDropDown} class="border-2 mr-[120px]">Open menu</button>
+        <button onclick={toggleDropDown} class="border-2 mr-[120px] p-1">Open menu</button>
 
         {#if isDropDownOpen}
-            <div class="absolute top-10 w-45 bg-blue-200 text-lg text-black rounded-sm shadow-lg z-1">
+            <div class="absolute top-12 w-45 bg-blue-200 text-lg text-black rounded-sm shadow-lg z-1">
                 <button onclick={toggleTodoList} class="block px-4 py-2 hover:bg-gray-100 w-full">To-do List</button>
                 <button onclick={() => { isSettingsOpen = true; isDropDownOpen = false }} class="block px-4 py-2 hover:bg-gray-100 w-full">Settings</button>
             </div>
@@ -144,9 +144,9 @@
             </div>
 
             <div class="space-x-20">
-                <button onclick={startTimer} class="border-2">Start</button>
-                <button onclick={pauseTimer} class="border-2">Pause</button>
-                <button onclick={resetTimer} class="border-2">Reset</button>
+                <button onclick={startTimer} class="border-2 p-2">Start</button>
+                <button onclick={pauseTimer} class="border-2 p-2">Pause</button>
+                <button onclick={resetTimer} class="border-2 p-2">Reset</button>
             </div>
         </div>
     </div>
